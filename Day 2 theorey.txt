@@ -3,5 +3,13 @@ Ans:Npm is of two things: one its a Online repository to publish open source nod
 second its a command line interface to install version managements,dependency management.One more important use of npm  is dependency management
 if you run npm install from project root and npm will install all dependencies in package.json.This helps node.js project easier to install from
 git repo.
+
 2)What is `Parcel/Webpack`? Why do we need it?
-Ans: 
+Ans: parcel and Webpack is one of bundler used in react app .Where the bundler minfies the code, removes unwanted lines of code 
+without making any changes to functionality  and makes it easier to send response or recieve response from server 
+when it takes you to transfer multiple files without using any bundler for loading the page of your application.Both these bundlers reduce the
+time it takes to transfer data and files to the server from application.
+
+3)What is `.parcel-cache`?
+Ans: parcel-cache is folder where it stores information about your project while parcel builds it .so that when it rebuilds it doesn't require
+re-prase and re-analyze every thing from scratch. It is the one of the reason why parcel is so fast.
