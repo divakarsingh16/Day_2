@@ -1,0 +1,7 @@
+1) - What is `NPM`?
+Ans:Npm is of two things: one its a Online repository to publish open source node projects.
+second its a command line interface to install version managements,dependency management.One more important use of npm  is dependency management
+if you run npm install from project root and npm will install all dependencies in package.json.This helps node.js project easier to install from
+git repo.
+2)What is `Parcel/Webpack`? Why do we need it?
+Ans: 
