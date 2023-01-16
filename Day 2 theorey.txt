@@ -45,4 +45,25 @@ build is already  running on the same build it creates a new port.
 
 9)What is `.gitignore`? What should we add and not add into it?
 Ans: It is  text file which tells git about which files need to be ignore in the project.The modules which can be regenerated or which can be build by using package.json data
-should not be added like node_modules,.parcel_cache etc..
+should be added like node_modules,.parcel_cache etc..
+
+10)What is the difference between `package.json` and `package-lock.json` ?
+Ans: package.json consits of json document that package managers like npm or yarn uses to store project information.
+In other words package.json is project metaData file.
+The major difference between package.json and package-lock.json is that package.json will update node_modules if there is any minor version but package-lock.json
+consits of exact same version of node_modules details in project_development.By the help of package-lock.json you can install required node_modules with out causing any
+error while running your app.
+
+11)Why should I not modify `package-lock.json`?
+Ans: As we keep node_modules in .gitignore by modifing them it may cause breaking your app and also when some other person clones your app and uses npm install
+it might break the app.It is advised to not at all modify the node_modules files.
+
+12)What is `node_modules` ? Is it a good idea to push that on git?
+Ans:node_modules consits of project data and they are like bulding blocks of application.
+
+13)What is the `dist` folder?
+Ans 'dist' directory is where final built version of your project is stored.When you run parcel bundler to build your project it will take all assest
+and dependencies that are required in your project and process them as necessary and the final result in the dist directory.
+
+14) What is `browserlists ?
+Ans: it helps to maintain the app in which version of browser should be supported.
