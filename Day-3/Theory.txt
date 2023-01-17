@@ -1,0 +1,27 @@
+1)What is JSX ?
+Ans: It is a funny Tag syntax which is neither a string nor HTML.It is syntax extension for javascript.JSX may remind you of a template language,
+but it comes with full power of javascript.
+
+2)What are super powers of JSX?
+Ans: Jsx represent objects. Babel compiles JSX down to React.createElement() calls.React.createElement()
+performs few checks and to help you write bug free code but essentially it creates an object like this.
+
+// Note: this structure is simplified
+const element = {
+  type: 'h1',
+  props: {
+    className: 'greeting',
+    children: 'Hello, world!'
+  }
+};
+
+These objects are called react elements.
+
+3)Role of type attribute in script tag ? What options can i use there ?
+Ans: The type attribute specifies the type of the script and identifies the content between <script></script> tags.
+We can use type="module" or type="importmap".
+
+4){TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in jsx
+Ans: {TitleComponent} it doesn't treat as component but as a stirng.
+{<TitleComponent/>} it calls the component.
+{<TitleComponent></TitleComponent>} this is another way of calling component but when nested components are present.
