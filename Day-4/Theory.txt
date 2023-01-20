@@ -1,0 +1,22 @@
+1).Is JSX manditory for React?
+Ans:JSX is not a requriment for using React.Using React without JSX is especially convinent when you dont want to set up compilation in your build
+environment. Each JSX element is just syntatic sugar for calling React.createElement(component,props,...children). So, anything you can do with JSX
+can also be done with plain JavaScript.
+2).Is ES6 manditory for React ?
+Ans: No it's not manditory to use Es6.Es6 is pollyfilled by Babel so that it support older version of browsers.
+
+3){TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX 
+Ans: you can't call a component like this in JSX {TitleComponent}.You can call a component in two ways i){<TitleComponent/>} ii){<TitleComponent></TitleComponent>}.
+
+4) How can you write comments in JSX?
+Ans: inside curley braces starts with forward slash(/) and *(asterisk) and write your content and */ close with curley braces.
+
+5) What is <React.Fragment><React.Fragment/> and <></> ?
+Ans : React Fragment are used to group multiple elements without adding any extra nodes to the DOM. <> </> this is short syntax for
+<React.Fragment><React.Fragment/>.
+
+6)What is Virtual DOM ?
+Ans: virtual DOM is a programming concept where an ideal or virtual representation of a UI is Kept in memory and synced with the real DOM by a 
+Libray such as ReactDom.This process is known as Reconciliation.
+This approach enables the declarative API of React.You tell React what state you want UI to be in, and it makes sure DOM matches that state.
+This abstracts out the attribute manipulation, event Handiling and manual DOM updating that you would other wise have to build your app.
