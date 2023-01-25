@@ -1,0 +1,15 @@
+1)what is difference between named exports and default exports and * as exports?
+Ans: only one default export can be there for each component and in named export there can be n number of named exports.while in react importing a named export
+it should be present in {} and where as default export can be imported directly.When you import * as alias we import every thing from the component.
+
+2)what is importance of  config.js file ?
+Ans: It is used to store hard coded data in your file. It is also called as constants file.like  IMG_URL_CDN= "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/".
+
+3)What are React Hooks?
+Ans:Hooks are JavaScript functions.They are used in react in different ways like updating data using useState etc.Some of most commonly used
+Hooks are useState,useEffect etc.
+
+4)What do we need useState Hook?
+Ans:It is used to store some data.useState returns an array with two elements onwe is intialstate Value and other is a function to update the intial value.
+In react the component will not render with normal javascript local variables.To see the changes effectively in our app we use useState Hook to 
+update our Data. 

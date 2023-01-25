@@ -1,5 +1,5 @@
 1).Is JSX manditory for React?
-Ans:JSX is not a requriment for using React.Using React without JSX is especially convinent when you dont want to set up compilation in your build
+Ans:JSX is not a requriment for using React. Using React without JSX is especially convinent when you dont want to set up compilation in your build
 environment. Each JSX element is just syntatic sugar for calling React.createElement(component,props,...children). So, anything you can do with JSX
 can also be done with plain JavaScript.
 2).Is ES6 manditory for React ?
@@ -20,3 +20,90 @@ Ans: virtual DOM is a programming concept where an ideal or virtual representati
 Libray such as ReactDom.This process is known as Reconciliation.
 This approach enables the declarative API of React.You tell React what state you want UI to be in, and it makes sure DOM matches that state.
 This abstracts out the attribute manipulation, event Handiling and manual DOM updating that you would other wise have to build your app.
+
+7)What is Reconciliation in React?
+Ans:The algorithm React uses to diff one tree with another to determine which parts need to be changed.
+Reconciliation is a process where react compares the trees for example if there are Two elements of different types will produce different trees.
+The developer can hint at which child elements may be stable across different renders with a key prop.Using diffing algoritham when two diffing trees,
+React first compares the two root elements.The behaviour is different depending on the types of the root elements. When ever the root elements
+have different types ,React will tear down the old tree and bild from scratch.Going from <a> to <img>, or from <Article> to <Comment>, or from <Button> to <div> - any of those will lead to a full rebuild.
+If suppose there is a modification in the list without keys it would be reduce perfomance of app as  react takes time to which list is modified.
+for example
+<ul>
+  <li>Duke</li>
+  <li>Villanova</li>
+</ul>
+
+<ul>
+  <li>Connecticut</li>
+  <li>Duke</li>
+  <li>Villanova</li>
+</ul>
+
+React destorys the whole Old Dom tree and builds new tree with out comparing them as first list is added and react doesn't recognise it. Insted
+you can add keys 
+<ul>
+  <li key="2015">Duke</li>
+  <li key="2016">Villanova</li>
+</ul>
+
+<ul>
+  <li key="2014">Connecticut</li>
+  <li key="2015">Duke</li>
+  <li key="2016">Villanova</li>
+</ul>
+ react understands the only thing that changed with paticular keys and only updates the changed part instead of whole component re rendering.
+
+ 8)What is React Fiber ?
+ Ans: React Fiber is a new Reconciliation engine that was introduced in React 16. It is a reimplementation of the React Reconciliation algoritham,
+ which is responsible for determining how virtual DOM(Document object model) is updated in response to changes in the component tree.
+ One of the main goal of React fiber is to improve the performance of the React apps by allowing the reconsiliation process to be broken down into 
+ smaller, more granular steps.This can be especially useful for improving the performance of complex or large apps , as it allows React to prioritize
+ and update the most important parst of Virtual DOM first.
+ React Fiber also introduces a new concept called "priority levels", which allows React to assign different priorities to different updates. This can ensure that high-priority updates, such as user input, are handled quickly, while low-priority updates, such as background tasks, can be done later.
+
+Also, Fiber also introduces new features and APIs that can make it easier to build complex and interactive user interfaces. React Fiber has the phenomenon of "suspense", which allows components to "wait" for asynchronous data to be fetched and loaded before rendering.
+
+Overall, React Fiber is a significant improvement to the React reconciliation engine, and it offers a number of benefits for building high-performance and interactive user interfaces with React, and makes it that much faster.
+
+9)why we need keys in React? When do we need keys in React?
+Ans:f suppose there is a modification in the list without keys it would be reduce perfomance of app as  react takes time to which list is modified.
+for example
+<ul>
+  <li>Duke</li>
+  <li>Villanova</li>
+</ul>
+
+<ul>
+  <li>Connecticut</li>
+  <li>Duke</li>
+  <li>Villanova</li>
+</ul>
+
+React destorys the whole Old Dom tree and builds new tree with out comparing them as first list is added and react doesn't recognise it. Insted
+you can add keys 
+<ul>
+  <li key="2015">Duke</li>
+  <li key="2016">Villanova</li>
+</ul>
+
+<ul>
+  <li key="2014">Connecticut</li>
+  <li key="2015">Duke</li>
+  <li key="2016">Villanova</li>
+</ul>
+ react understands the only thing that changed with paticular keys and only updates the changed part instead of whole component re rendering.
+
+ 10)Can we use index as Keys in React?
+ Ans:yes but it is not recommended using indexs for keys if the order of items may change. This can negatively impact performance and may cause
+ issue with component state.
+
+ 11)What is props and ways to pass them?
+ Ans:props are used to pass data as arugments and accept them as params but this is just for understanig them.props are used to pass data from one component
+ to another.
+ 
+ 12)What is config driven UI?
+ Ans: config driven UI are based on the configuration of the data application receives. It is rather a good practise to use config driven UI 
+ to make application dynamic.It is vey common and basic approach to interact with user.It provides a generic Interface to develop things which help
+ you project to scale well. It saves lot of development time and effort. A typical login form is common in most apps.Most of these form  also
+ get frequent updates as the requriment increases in terms of Form Validations, dropdown options or design changes.
