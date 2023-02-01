@@ -1,0 +1,21 @@
+1) what is microservice?
+Ans: microservice are an architectural and organization approach to software development where software is composed of small independent services
+that communicate over well-defined APIS.These are owned by small,self-contained teams. microservice architecturs make applications easier to scale
+and faster to develop,enabiling innovation and accelrating time-market for new features.
+
+2) What is Monolith architecture?
+Ans:with monolith architecture , all processes are tightly coupled and run as a single service.This means that if one process of application is
+spike in demand entire architecture must be scaled.Adding or implimenting monolith application features becomes more complex as the code base grows.
+
+3).What is difference between microservice and Monolith ?
+Ans: with monolith architecture , all processes are tightly coupled and run as a single service.This means that if one process of application is
+spike in demand entire architecture must be scaled.Adding or implimenting monolith application features becomes more complex as the code base grows.
+This complexity limits experimentation and make it difficult to implement new ideas.Monolith architecture add risk for application availbility
+because many tightly coupled  process increase the impact of a single process failure.
+
+With a microservices architecture, an application is built as independent components that run each application process as a service. 
+These services communicate via a well-defined interface using lightweight APIs. Services are built for business capabilities and
+each service performs a single function. Because they are independently run, each service can be updated, deployed, and 
+scaled to meet demand for specific functions of an application.
+
+4)Why do we need useEffect Hook

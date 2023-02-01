@@ -1,0 +1,11 @@
+.rectangle-box{
+    background-color: rgba(160, 157, 157, 0.37);
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    margin: 10px;
+}
+.parent-cont{
+    display: flex;
+    flex-wrap: wrap;
+}

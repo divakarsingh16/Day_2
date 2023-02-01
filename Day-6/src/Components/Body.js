@@ -2,12 +2,14 @@ import RestaurantCard from "./RestaurantCard";
 import { restaurantList } from "../constant";
 import { useState, useEffect } from "react";
 import "../App.css";
+import Shimmer from "./shimmer";
 const Body = () => {
-  const [restaurants, setRestaurant] = useState(restaurantList);
+  const [allRestaurants, setAllRestaurant] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchtext, setSearchText] = useState("");
   const filterData = (searchtext, restaurants) => {
     return restaurants.filter((restaurant) =>
-      restaurant.data.name.includes(searchtext)
+      restaurant?.data?.name?.toLowerCase()?.includes(searchtext.toLowerCase())
     );
   };
   useEffect(() => {
@@ -20,9 +22,15 @@ const Body = () => {
     );
     const json = await data.json();
     console.log(json);
-    setRestaurant(json?.data?.cards[2]?.data?.data?.cards)
+    setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   };
-  return (
+console.log("rendered")
+  if (!allRestaurants) return null;
+
+  return allRestaurants?.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div>
       <input
         type="text"
@@ -32,19 +40,20 @@ const Body = () => {
       />
       <button
         onClick={() => {
-          const data = filterData(searchtext, restaurants);
+          const data = filterData(searchtext, allRestaurants);
           console.log(data);
-          setRestaurant(data);
+          setFilteredRestaurants(data);
         }}
       >
         Search
       </button>
       <div className="restaurant-list">
-        {restaurants.map((restaurant) => {
-          return (
-            <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
-          );
-        })}
+        {filteredRestaurants.length === 0 ? (<h1>No Data Found</h1>) : (filteredRestaurants.map((restaurant) => {
+            return (
+              <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+            );
+          })
+        )}
         {/* <RestaurantCard {...restaurantList[0].data} />
       <RestaurantCard {...restaurantList[1].data} />
       <RestaurantCard {...restaurantList[2].data} />
