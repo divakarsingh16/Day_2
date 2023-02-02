@@ -18,4 +18,48 @@ These services communicate via a well-defined interface using lightweight APIs. 
 each service performs a single function. Because they are independently run, each service can be updated, deployed, and 
 scaled to meet demand for specific functions of an application.
 
-4)Why do we need useEffect Hook
+4)Why do we need useEffect Hook ?
+Ans: useEffect is also a javaScript function provided by React.This useEffet allows to perform sideEffects in your component.some examples of 
+useEffect are fetching API data , directly updating DOM and setting up Timers . useEffect accepts two arrguments a callBack function
+and a dependency array which is optional. If empty dependency array is passed then useEffect will only be called after intial render. If no dependencies
+are defined then useEffect will be called after every re-render.
+
+5)What is optional chaining?
+Ans: Optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called using this operator
+is undefined or null, the expression short circuts and evaluates to undefined insted of throwing an error.
+
+6)What is shimmer UI ?
+Ans: shimmer UI is like loading indicators used when fetching a data from API or local storage. It resembles similar to what actual data looks like and
+displayed until actaual data is rendered in UI.
+
+7)what is difference between JS expression and JS statement ?
+Ans: JS expression returns a value that we use in the application eg : isOdd? true : false based on isOdd returns true or false.
+A JS statement doesn't returns a value ex let a=10 it doesn't returns any value.
+
+8)What is conditional rendering ? explain with code example.
+Ans : conditional rendering is based on given conditon is true or false the component will be rendered. while intially loading a web page
+ most of the site shows us shimmer effect intially and data will be displayed later on.
+we have an empty state 
+ ex: (if state is empty){ | state.length === 0 ? <shimmer/> : <Data/> 
+    return <Shimmer/>     |    or
+ }                        | 
+                          | {state && <Data/>}                  |
+    return (              | {!state && <Shimmer/>} 
+        Data              |
+    )                     |
+
+ 9)What is CORS ?
+ Ans : cross origin resource sharing(CORS) is an HTTP-header based mechanism that allow a server to indicate origins  other than its own from which a
+ browser permit loading resources. CORS also relies on mechanism by which brwoser makes a 'preflight' request to server hosting cross-origin resource,
+ in order to check server will permit the actual request.The CORS mechanism supports secure cross-origin requests and data transfers between browsers and servers.
+Modern browsers use CORS in APIs such as XMLHttpRequest or Fetch to mitigate the risks of cross-origin HTTP requests.
+
+10)What is async and await?
+Ans: The async and await key words enable asynchronous ,promise-based behaviour to be written in a cleaner style,avoiding the need to expecitly
+configure promise chains.The await key word is valid only inside the async function with regular javaScript code.if you use outside of async
+function body you will get a syntax error.
+
+11)What is the use of 'const json = await data.json() ; in get restaurants?
+Ans: JavaScript works synchronusly so some times when we need data from api it takes time to get data in mean time there will be quing for
+ next line to be executed so to use the time insted of waiting for one we use Modern promise async and await to make the process asyncronusly.
+ await is used to wait until the data is fetched then only next step will be excuted.
