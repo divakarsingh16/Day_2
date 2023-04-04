@@ -3,6 +3,7 @@ import { restaurantList } from "../constant";
 import { useState, useEffect } from "react";
 import "../App.css";
 import Shimmer from "./shimmer";
+import { Link } from "react-router-dom";
 const Body = () => {
   const [allRestaurants, setAllRestaurant] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -12,6 +13,7 @@ const Body = () => {
       restaurant?.data?.name?.toLowerCase()?.includes(searchtext.toLowerCase())
     );
   };
+  console.log(useState());
   useEffect(() => {
     getRestaurants();
   }, []);
@@ -54,7 +56,12 @@ const Body = () => {
         ) : (
           filteredRestaurants.map((restaurant) => {
             return (
-              <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+              <Link
+                key={restaurant.data.id}
+                to={"/restaurant/" + restaurant.data.id}
+              >
+                <RestaurantCard {...restaurant.data} />
+              </Link>
             );
           })
         )}

@@ -31,3 +31,8 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.menu {
+  display: flex;
+  flex-direction: row;
+}
